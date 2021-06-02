@@ -33,7 +33,8 @@ gerarCpf = () => {
   return `${num1}.${num2}.${num3}-${dig1}${dig2}`;
 }
 
-path windows para configurar android studio
+
+// path windows para configurar android studio
 variaveis:
 JAVA_HOME C:\Program Files\Java\jdk1.8.0_171
 ANDROID_HOME C:\android\sdk
@@ -44,3 +45,17 @@ path:
 %ANDROID_HOME%\platform-tools
 C:\Program Files\Git\usr\bin
 C:\Program Files\Git\mingw64\libexec\git-core
+
+//retorna se é primo
+function isPrime(element) {
+  var start = 2;
+  while (start <= Math.sqrt(element)) {
+    if (element % start++ < 1) {
+      return false;
+    }
+  }
+  return element > 1;
+}
+
+// erro node sass
+run npm rebuild node-sass or sudo npm rebuild node-sass
