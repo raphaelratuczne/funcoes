@@ -32,3 +32,15 @@ gerarCpf = () => {
 
   return `${num1}.${num2}.${num3}-${dig1}${dig2}`;
 }
+
+path windows para configurar android studio
+variaveis:
+JAVA_HOME C:\Program Files\Java\jdk1.8.0_171
+ANDROID_HOME C:\android\sdk
+
+path:
+%ANDROID_HOME%\tools
+%ANDROID_HOME%\tools\bin
+%ANDROID_HOME%\platform-tools
+C:\Program Files\Git\usr\bin
+C:\Program Files\Git\mingw64\libexec\git-core
