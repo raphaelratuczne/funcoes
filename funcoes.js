@@ -59,3 +59,14 @@ function isPrime(element) {
 
 // erro node sass
 run npm rebuild node-sass or sudo npm rebuild node-sass
+
+
+// le um arquivo como base64
+getBase64(file): Promise<string | ArrayBuffer> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+    reader.readAsDataURL(file);
+  });
+}
