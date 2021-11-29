@@ -70,3 +70,18 @@ getBase64(file): Promise<string | ArrayBuffer> {
     reader.readAsDataURL(file);
   });
 }
+
+// remove valor inicial de base64
+removeStringOnArrayBuffer(value: string, type?: string): string {
+  if (type) {
+    return value.replace(`data:${type};base64,`, '');
+  } else {
+    const arrTermos = [
+      'data:image/jpeg;base64,',
+      'data:application/octet-stream;base64,',
+      'data:application/pdf;base64,',
+      'data:image/png;base64,'
+    ];
+    return value.replace(new RegExp(arrTermos.join('|')), '');
+  }
+}
