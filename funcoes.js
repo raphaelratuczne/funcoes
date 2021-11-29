@@ -116,3 +116,12 @@ toDataUrl(url): Promise<any> {
     xhr.send();
   });
 }
+
+// coloca 3 pontos em um texto que ultrapassa um espaço
+.tres-pontinhos {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100px; // precisa ter um tamanho maximo
+  display: block;
+}
