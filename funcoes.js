@@ -85,3 +85,14 @@ removeStringOnArrayBuffer(value: string, type?: string): string {
     return value.replace(new RegExp(arrTermos.join('|')), '');
   }
 }
+
+// le uma uri como blob
+async toBlob(uri) {
+  try {
+    const response = await fetch(uri);
+    const blob = await response.blob();
+    return blob;
+  } catch (error) {
+    console.log('blob error',error);
+  }
+}
