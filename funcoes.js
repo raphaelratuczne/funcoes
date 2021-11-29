@@ -62,7 +62,7 @@ run npm rebuild node-sass or sudo npm rebuild node-sass
 
 
 // le um arquivo como base64
-getBase64(file): Promise<string | ArrayBuffer> {
+getBase64(file: File): Promise<string | ArrayBuffer> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.onload = () => resolve(reader.result);
@@ -95,4 +95,24 @@ async toBlob(uri) {
   } catch (error) {
     console.log('blob error',error);
   }
+}
+
+// le uma url como arquivo
+toDataUrl(url): Promise<any> {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+      const reader = new FileReader();
+      reader.onloadend = function () {
+        resolve(reader.result);
+      };
+      reader.onerror = function () {
+        reject(reader.error);
+      };
+      reader.readAsDataURL(xhr.response);
+    };
+    xhr.open('GET', url);
+    xhr.responseType = 'blob';
+    xhr.send();
+  });
 }
