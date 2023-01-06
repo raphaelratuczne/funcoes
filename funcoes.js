@@ -1,3 +1,8 @@
+// gera uma key unica
+function generateUniqueKey() {
+  return (new Date().getTime() + Math.random()).toString(16);
+}
+
 // gerar cpf
 gerarCpf = () => {
     const aleatorio = () => {
